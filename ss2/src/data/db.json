@@ -1,39 +1,73 @@
 {
-  "blog" : [
+  "blogs": [
     {
-      "id" :1,
-      "title" : "5 Best Crypto Performers During The 2022 Market Flop",
+      "id": 1,
+      "title": "Hair",
       "slug": "5 Best Crypto Performers During The 2022 Market Flop",
-      "category" : "Crypto News",
-      "updatedAt" : "21 hours ago"
+      "category": "Crypto News",
+      "updatad": "21 hours ago"
     },
     {
-      "id" : 2,
-      "title" : "Top crypto funding stories of 2022",
-      "slug" : "Top crypto funding stories of 2022",
-      "category" : "New Year Special",
-      "updatedAt" : "a day ago"
+      "id": 2,
+      "title": "Top crypto funding stories of 2022",
+      "slug": "Top crypto funding stories of 2022",
+      "category": "New Year Special",
+      "updatad": "a day ago"
     },
     {
-      "id" : 3,
-      "title" : "2023 will see the death of play-to-earn gaming",
-      "slug" : "2023 will see the death of play-to-earn gaming",
-      "category" : "Opinion",
-      "updatedAt" : "a day ago"
+      "id": 3,
+      "title": "2023 will see the death of play-to-earn gaming",
+      "slug": "2023 will see the death of play-to-earn gaming",
+      "category": "Opinion",
+      "updatad": "a day ago"
     },
     {
-      "id" : 4,
-      "title" : "US lawmakers under pressure following FTX collapse: Report",
-      "slug" : "us-lawmakers-under-pressure-following-ftx-collapse-report",
-      "category" : "News",
-      "updatedAt" : "2 days ago"
+      "id": 4,
+      "title": "US lawmakers under pressure following FTX collapse: Report",
+      "slug": "us-lawmakers-under-pressure-following-ftx-collapse-report",
+      "category": "News",
+      "updatad": "2 days ago"
     },
     {
-      "id" : 5,
-      "title" : "A Crypto Holiday Special: Past, Present, And Future With Material Indicators",
-      "slug" : "A Crypto Holiday Special: Past, Present, And Future With Material Indicators",
-      "category" : "Interviews",
-      "updatedAt" : "2 days ago"
+      "id": 5,
+      "title": "A Crypto Holiday Special: Past, Present, And Future With Material Indicators",
+      "slug": "A Crypto Holiday Special: Past, Present, And Future With Material Indicators",
+      "category": "Interviews",
+      "updatad": "2 days ago"
+    },
+    {
+      "title": "fbd",
+      "slug": "bdb",
+      "category": "dfbd",
+      "updatad": "db",
+      "id": 6
+    },
+    {
+      "title": "",
+      "slug": "",
+      "category": "",
+      "updatad": "",
+      "id": 7
+    },
+    {
+      "title": "",
+      "slug": "",
+      "category": "",
+      "updatad": "",
+      "id": 8
+    },
+    {
+      "title": "fdvs",
+      "slug": "svs",
+      "category": "svds",
+      "updatad": "sdv",
+      "id": 9
     }
+  ],
+  "blog2": [
+    {}
+  ],
+  "blog3": [
+    {}
   ]
 }

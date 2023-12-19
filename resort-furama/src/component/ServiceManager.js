@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from "react";
-import Search from "./Search";
-import Navigation from "./Navigation";
-import { getListService, removeService } from "../service/service";
+// import Search from "./Search";
+// import Navigation from "./Navigation";
+// import { getListService, removeService } from "../service/service";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function Service() {
-    const [services, setServices] = useState([]);
+    // const [services, setServices] = useState([]);
 
-    const getServices = async () => {
-        const data = await getListService();
-        setServices(data);
-    };
+    // const getServices = async () => {
+    //     const data = await getListService();
+    //     setServices(data);
+    // };
 
-    useEffect(() => {
-        getServices();
-        window.scrollTo(0,0)
-    }, []);
-    const deleteService =async (id)=>{
-        await removeService(id)
-        await getServices();
-        await Swal.fire({
-            title: 'Deleted!',
-            icon:'success',
-            timer:2000
-        })
-    }
+    // useEffect(() => {
+    //     getServices();
+    //     window.scrollTo(0,0)
+    // }, []);
+    // const deleteService =async (id)=>{
+    //     await removeService(id)
+    //     await getServices();
+    //     await Swal.fire({
+    //         title: 'Deleted!',
+    //         icon:'success',
+    //         timer:2000
+    //     })
+    // }
     function confirmDeleteService(id,name){
         Swal.fire({
             title: "Delete Service",
@@ -38,7 +38,7 @@ function Service() {
             confirmButtontext: "Delete",
         }).then((result)=>{
             if(result.isConfirmed){
-                deleteService(id);
+                // deleteService(id);
             }
         })
 
@@ -46,8 +46,8 @@ function Service() {
 
     return (
         <>
-            <Navigation />
-            <Search />
+            {/*<Navigation />*/}
+            {/*<Search />*/}
             <div className="popular_places_area" id="service">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -59,7 +59,7 @@ function Service() {
                     </div>
                     {/* LIST SERVICE */}
                     <div className="row">
-                        { services.map((service) =>{
+                        { (() =>{
                             return(
                                 <div className="col-lg-4 col-md-6">
                                     <div className="single_place">
@@ -69,15 +69,15 @@ function Service() {
                                                 alt=""
                                             />
                                             <p className="prise">
-                                                ${service.costs}
+
                                             </p>
                                         </div>
                                         <div className="place_info">
                                             <Link href="">
-                                                <h3>{service.service}</h3>
+                                                <h3></h3>
                                             </Link>
                                             <p>
-                                                Room size: <span style={{color:'red'}}>{service.usable_area}m2</span>
+                                                Room size: <span style={{color:'red'}}></span>
                                             </p>
                                             <div className="rating_days d-flex justify-content-between">
                       <span className="d-flex justify-content-center align-items-center">
@@ -90,14 +90,14 @@ function Service() {
                       </span>
                                                 <div className="days">
                                                     <Link
-                                                        to={`/service/edit/${service.id}`}
+                                                        to={`/service/edit/`}
                                                         style={{ backgroundColor: "#1ec6b6", color: "white" }}
                                                         className="btn"
                                                     >
                                                         {" "}
                                                         Edit
                                                     </Link>
-                                                    <button className=" btn btn-dele-service" onClick={()=>{confirmDeleteService(service.id,service.service)}}
+                                                    <button className=" btn btn-dele-service"
                                                     >
                                                         Delete
                                                     </button>

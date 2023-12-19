@@ -1,8 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import logo from '../../src/assets/images/logo/furama-hotel-logo.png';
 function Header() {
-
   console.log();
   return (
     <header>
@@ -27,23 +26,15 @@ function Header() {
                     <nav>
                       <ul id="navigation">
                         <li>
-                          <NavLink className="active" to={"/"}>
-                            home
-                          </NavLink>
                         </li>
-                        {/*<li>*/}
-                        {/*  <a href="about.html">About</a>*/}
-                        {/*</li>*/}
                         <li>
                           <a className="" href="">
                             Service <i className="ti-angle-down" />
                           </a>
                           <ul className="submenu">
                             <li>
-                              <NavLink to={"service/create"}>Create</NavLink>
                             </li>
                             <li>
-                              {/* <NavLink to={"service/edit"}>Edit</NavLink> */}
                             </li>
                           </ul>
                         </li>
@@ -53,13 +44,10 @@ function Header() {
                           </a>
                           <ul className="submenu">
                             <li>
-                              <NavLink to={"customer/list"}>List</NavLink>
                             </li>
                             <li>
-                              <NavLink to={"customer/create"} className={"hải"}>Create</NavLink>
                             </li>
                             <li>
-                              {/* <NavLink to={"customer/edit"}>Edit</NavLink> */}
                             </li>
                           </ul>
                         </li>
@@ -69,10 +57,8 @@ function Header() {
                           </a>
                           <ul className="submenu">
                             <li>
-                              <NavLink to={"contract/list"}>List</NavLink>
                             </li>
                             <li>
-                              <NavLink to={"contract/create"}>Create</NavLink>
                             </li>
                           </ul>
                         </li>
