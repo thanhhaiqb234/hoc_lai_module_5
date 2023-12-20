@@ -1,21 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import Service from "./component/ServiceManager";
-import Footer from "./component/Footer";
+import {StrictMode} from "react";
+import {Routes, Route} from "react-router";
+import {BrowserRouter} from "react-router-dom";
 import Header from "./component/Header";
-import Navigation from "./component/Navigation";
-import ServiceEdit from "./component/ServiceEdit";
-import ServiceCreate from "./component/ServiceCreate";
+import Footer from "./component/Footer";
+import ServiceManager from "./component/ServiceManager";
+
+
 function App() {
-  return (
-    <>
-        <Header/>
-        <Navigation/>
-      <Footer/>
-        <ServiceEdit/>
-        <ServiceCreate/>
-    </>
-  );
+    return (
+        <>
+            <StrictMode>
+                <BrowserRouter>
+                    <Header/>
+                    <Routes>
+                        <Route path="/" element={<ServiceManager/>}/>
+                    </Routes>
+                    <Footer/>
+                </BrowserRouter>
+            </StrictMode>
+        </>
+    );
 }
 
 export default App;

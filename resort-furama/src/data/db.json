@@ -1,0 +1,533 @@
+{
+  "typeRental": [
+    {
+      "id": 1,
+      "rentalName": "Year"
+    },
+    {
+      "id": 2,
+      "rentalName": "Month"
+    },
+    {
+      "id": 3,
+      "rentalName": "Day"
+    },
+    {
+      "id": 4,
+      "rentalName": "Hourly"
+    }
+  ],
+  "typeService": [
+    {
+      "id": 1,
+      "serviceName": "Villa"
+    },
+    {
+      "id": 2,
+      "serviceName": "House"
+    },
+    {
+      "id": 3,
+      "serviceName": "Room"
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customers": [
+    {
+      "id": 2,
+      "name": "Tran Thi Bao",
+      "date_of_birth": "02/02/1995",
+      "gender": "Female",
+      "id_card": "987654321",
+      "phone_number": "0987654321",
+      "email": "baotran22@yahoo.com",
+      "customer_type": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "address": " District 2, Ho Chi Minh City"
+    },
+    {
+      "id": 3,
+      "name": "Le Minh Chau",
+      "email": "leminhc@hotmail.com",
+      "phone_number": "0917891234",
+      "date_of_birth": "2004-01-28",
+      "address": " District 3, Ho Chi Minh City",
+      "gender": "male",
+      "id_card": "456789123",
+      "customer_type": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Pham Thi Duyen",
+      "date_of_birth": "04/04/1992",
+      "gender": "Female",
+      "id_card": "369852147",
+      "phone_number": "0369852147",
+      "email": "phamthid@gmail.com",
+      "customer_type": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "address": " District 4, Ho Chi Minh City"
+    },
+    {
+      "id": 5,
+      "name": "Hoang Van Dai",
+      "date_of_birth": "05/05/1988",
+      "gender": "Male",
+      "id_card": "258147369",
+      "phone_number": "0258147369",
+      "email": "hoangvane@yahoo.com",
+      "customer_type": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "address": " District 5, Ho Chi Minh City"
+    },
+    {
+      "id": 6,
+      "name": "Nguyen Thi Hai",
+      "date_of_birth": "06/06/1991",
+      "gender": "Female",
+      "id_card": "147258369",
+      "phone_number": "0147258369",
+      "email": "nguyenthif@hotmail.com",
+      "customer_type": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "address": " District 6, Ho Chi Minh City"
+    },
+    {
+      "id": 7,
+      "name": "Tran Van Giang",
+      "date_of_birth": "07/07/1987",
+      "gender": "Male",
+      "id_card": "963852741",
+      "phone_number": "0963852741",
+      "email": "tranvang@gmail.com",
+      "customer_type": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "address": " District 7, Ho Chi Minh City"
+    },
+    {
+      "id": 8,
+      "name": "Le Thi Hong",
+      "date_of_birth": "08/08/1994",
+      "gender": "Female",
+      "id_card": "741852963",
+      "phone_number": "0741852963",
+      "email": "lethihong@yahoo.com",
+      "customer_type": {
+        "id": 5,
+        "name": "Member"
+      },
+      "address": " District 8, Ho Chi Minh City"
+    },
+    {
+      "id": 9,
+      "name": "Phan Van Khang",
+      "email": "phanvani@hotmail.com",
+      "phone_number": "0912741963",
+      "date_of_birth": "09/09/1986",
+      "address": " District 9, Ho Chi Minh City",
+      "gender": "Male",
+      "id_card": "852741963",
+      "customer_type": {
+        "id": 4,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Pham Cong Nam",
+      "email": "namhung024@gmail.com",
+      "phone_number": "0919274983",
+      "date_of_birth": "2023-06-26",
+      "address": "Nghe An",
+      "gender": "male",
+      "id_card": "1867412812",
+      "customer_type": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Pham Cong Nam New",
+      "email": "thanhhai@gmail.com",
+      "phone_number": "0914546447",
+      "date_of_birth": "2023-11-17",
+      "address": "adsadasdas",
+      "gender": "male",
+      "id_card": "197821357",
+      "customer_type": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "name": "Dinh Thanh Hai",
+      "email": "thanhhai@gmail.com",
+      "phone_number": "0836259582",
+      "date_of_birth": "2023-11-15",
+      "address": "Quảng Bình",
+      "gender": "male",
+      "id_card": "09445632595",
+      "customer_type": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 14
+    },
+    {
+      "id": 15,
+      "name": "Dinh Thanh Hai",
+      "email": "congnam@gmail.com",
+      "phone_number": "0945212096",
+      "date_of_birth": "2023-11-15",
+      "address": "Quảng Bình",
+      "gender": "female",
+      "id_card": "099002621",
+      "customer_type": {
+        "id": 2,
+        "name": "Platinum"
+      }
+    },
+    {
+      "name": "Nguyen Van",
+      "email": "nguyenvan@gmail.com",
+      "phone_number": "0945212096",
+      "date_of_birth": "",
+      "address": "Quảng Bình",
+      "gender": "male",
+      "id_card": "099002621",
+      "customer_type": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 16
+    },
+    {
+      "name": "Le Thi Hoa Diem",
+      "email": "hoa@gmail.com",
+      "phone_number": "0723456789",
+      "date_of_birth": "2023-10-30",
+      "address": "Việt Nam",
+      "gender": "male",
+      "id_card": "088006789",
+      "customer_type": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 17
+    },
+    {
+      "name": "Dinh Thanh Van",
+      "email": "thanhhai@gmail.com",
+      "phone_number": "0979274983",
+      "date_of_birth": "2023-11-03",
+      "address": "Đà Nẵng",
+      "gender": "male",
+      "id_card": "088006789",
+      "customer_type": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 18
+    }
+  ],
+  "services": [
+    {
+      "typeService": {
+        "id": 1,
+        "serviceName": "Villa"
+      },
+      "service": "GADDER VILLA",
+      "usable_area": 120,
+      "costs": 3000,
+      "max_people": 5,
+      "rental_type": 1,
+      "standard": "Luxury",
+      "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+      "floor": 4,
+      "pool": "No",
+      "free": "",
+      "image": "",
+      "type_rental": {
+        "id": 1,
+        "rentalName": "Year"
+      },
+      "id": 13
+    },
+    {
+      "id": 14,
+      "service": "OCEANFRONT VILLA",
+      "typeService": {
+        "id": 1,
+        "serviceName": "Villa"
+      },
+      "usable_area": 100,
+      "costs": 2500,
+      "max_people": 6,
+      "rental_type": "Month",
+      "standard": "Economy",
+      "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+      "pool": 10,
+      "floor": 5,
+      "free": "",
+      "image": ""
+    },
+    {
+      "id": 15,
+      "service": "HILLTOP VILLA",
+      "typeService": {
+        "id": 1,
+        "serviceName": "Villa"
+      },
+      "usable_area": 100,
+      "costs": 4000,
+      "max_people": 5,
+      "rental_type": "Month",
+      "standard": "Economy",
+      "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+      "pool": "",
+      "floor": 3,
+      "free": "",
+      "image": ""
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "contractNumber": "hd-0122023",
+      "customer": {
+        "id": "1",
+        "name": "Nguyen Van Anh",
+        "date_of_birth": "01/01/1990",
+        "gender": "Male",
+        "id_card": "123456789",
+        "phone_number": "0123456789",
+        "email": "nguyenanh@gmail.com",
+        "customer_type": "Platinium",
+        "address": "No.1 Street A, District 1, Ho Chi Minh City"
+      },
+      "service": {
+        "id": 13,
+        "service": "GADDER VILLA",
+        "usable_area": 120,
+        "costs": 3000,
+        "max_people": 5,
+        "type": "Month",
+        "standard": "Luxury",
+        "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+        "pool": "No",
+        "floor": 4,
+        "free": ""
+      },
+      "startDate": "2023-01-27",
+      "endDate": "2020-03-27",
+      "prepaidAmount": 1000,
+      "totalPayment": 4400
+    },
+    {
+      "id": 2,
+      "contractNumber": "hd-013023",
+      "customer": {
+        "id": 7,
+        "name": "Tran Van Giang",
+        "date_of_birth": "07/07/1987",
+        "gender": "Male",
+        "id_card": "963852741",
+        "phone_number": "0963852741",
+        "email": "tranvang@gmail.com",
+        "customer_type": "Gold",
+        "address": "No.7 Street G, District 7, Ho Chi Minh City"
+      },
+      "service": {
+        "id": 17,
+        "service": "LUXURY VILLA",
+        "usable_area": 110,
+        "costs": 1000,
+        "max_people": 5,
+        "type": "Day",
+        "standard": "Luxury",
+        "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+        "pool": 20,
+        "floor": 4,
+        "free": ""
+      },
+      "startDate": "2023-01-27",
+      "endDate": "2020-02-05",
+      "prepaidAmount": 5000,
+      "totalPayment": 10000
+    },
+    {
+      "id": 3,
+      "contractNumber": "hd-014023",
+      "customer": {
+        "id": 9,
+        "name": "Phan Van Khang",
+        "date_of_birth": "09/09/1986",
+        "gender": "Male",
+        "id_card": "852741963",
+        "phone_number": "0852741963",
+        "email": "phanvani@hotmail.com",
+        "customer_type": "Member",
+        "address": "No.9 Street I, District 9, Ho Chi Minh City"
+      },
+      "service": {
+        "id": 15,
+        "service": "HILLTOP VILLA",
+        "usable_area": 100,
+        "costs": 4000,
+        "max_people": 5,
+        "type": "Month",
+        "standard": "Economy",
+        "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+        "pool": "",
+        "floor": 3,
+        "free": ""
+      },
+      "startDate": "2023-02-10",
+      "endDate": "2020-03-10",
+      "prepaidAmount": 4000,
+      "totalPayment": 4000
+    },
+    {
+      "contractNumber": "hd129",
+      "startDate": "2023-07-28",
+      "endDate": "2023-07-30",
+      "prepaidAmount": 1000,
+      "totalPayment": 5000,
+      "cus": "10",
+      "service": {
+        "id": 14,
+        "service": "OCEANFRONT VILLA",
+        "usable_area": 100,
+        "costs": 2500,
+        "max_people": 6,
+        "type": "Month",
+        "standard": "Economy",
+        "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+        "pool": 10,
+        "floor": 5,
+        "free": ""
+      },
+      "customer": {
+        "id": 10,
+        "name": "Tran Thi Kim Ngan",
+        "date_of_birth": "10/10/1993",
+        "gender": "Female",
+        "id_card": "654321987",
+        "phone_number": "0654321987",
+        "email": "tranthik@gmail.com",
+        "customer_type": "Member",
+        "address": "No.10 Street K, District 10, Ho Chi Minh City"
+      },
+      "id": 6
+    },
+    {
+      "contractNumber": "hd123",
+      "startDate": "2023-07-29",
+      "endDate": "2023-07-30",
+      "prepaidAmount": 2001,
+      "totalPayment": 5000,
+      "cus": "6",
+      "service": {
+        "id": 17,
+        "service": "LUXURY VILLA",
+        "usable_area": 110,
+        "costs": 1000,
+        "max_people": 5,
+        "type": "Day",
+        "standard": "Luxury",
+        "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+        "pool": 20,
+        "floor": 4,
+        "free": ""
+      },
+      "customer": {
+        "id": 6,
+        "name": "Nguyen Thi Hai",
+        "date_of_birth": "06/06/1991",
+        "gender": "Female",
+        "id_card": "147258369",
+        "phone_number": "0147258369",
+        "email": "nguyenthif@hotmail.com",
+        "customer_type": "Gold",
+        "address": "No.6 Street F, District 6, Ho Chi Minh City"
+      },
+      "id": 7
+    },
+    {
+      "contractNumber": "hd-0122022789",
+      "startDate": "2023-11-22",
+      "endDate": "2023-11-15",
+      "prepaidAmount": 10000,
+      "totalPayment": 10000000,
+      "cus": "7",
+      "service": {
+        "id": 14,
+        "service": "OCEANFRONT VILLA",
+        "typeService": {
+          "id": 1,
+          "serviceName": "Villa"
+        },
+        "usable_area": 100,
+        "costs": 2500,
+        "max_people": 6,
+        "rental_type": "Month",
+        "standard": "Economy",
+        "description": "A luxury room with double bed, sea view, balcony and jacuzzi",
+        "pool": 10,
+        "floor": 5,
+        "free": "",
+        "image": ""
+      },
+      "customer": {
+        "id": 7,
+        "name": "Tran Van Giang",
+        "date_of_birth": "07/07/1987",
+        "gender": "Male",
+        "id_card": "963852741",
+        "phone_number": "0963852741",
+        "email": "tranvang@gmail.com",
+        "customer_type": {
+          "id": 3,
+          "name": "Gold"
+        },
+        "address": " District 7, Ho Chi Minh City"
+      },
+      "id": 8
+    }
+  ]
+}

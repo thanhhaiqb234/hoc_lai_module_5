@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import Search from "./Search";
-// import Navigation from "./Navigation";
+import Search from "./Search";
+import Navigation from "./Navigation";
 // import { getListService, removeService } from "../service/service";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -46,8 +46,8 @@ function Service() {
 
     return (
         <>
-            {/*<Navigation />*/}
-            {/*<Search />*/}
+            <Navigation />
+            <Search />
             <div className="popular_places_area" id="service">
                 <div className="container">
                     <div className="row justify-content-center">

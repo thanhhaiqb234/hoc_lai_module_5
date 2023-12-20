@@ -1,14 +1,20 @@
 import React, {useState, useEffect} from "react";
-import {getAll} from "../service/blog";
+import {deleteBlogById, getAll} from "../service/blog";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 export default function Blog() {
     const [blogs, setBlogs] = useState([]);
     const getAllBlog = async () => {
         const data = await getAll();
         setBlogs(data);
+        console.log(data);
     }
-    console.log(blogs)
+    const deleteBlog = async (id) => {
+        const message = await deleteBlogById(id);
+        getAllBlog();
+        console.log(message)
+    }
 
     useEffect(() => {
         getAllBlog();
@@ -42,18 +48,16 @@ export default function Blog() {
                             <td>{index + 1}</td>
                             <td>{item.title}</td>
                             <td>{item.category}</td>
-                            <td>{item.updatad}</td>
+                            <td>{item.updated}</td>
                             <td className={"text-lg-center"} >
                                 <Link to={`/blog/edit/${item.id}`}>
                                     <button className={"btn btn-success table-add"}>
                                         Edit
                                     </button>
                                 </Link>
-                                <Link to={`/delete/blog/${item.id}`}>
-                                    <button className={"m-lg-2  bg-danger"}>
+                                    <button onClick={() =>{deleteBlog(item.id)}} className={"m-lg-2  bg-danger"}>
                                         Delete
                                     </button>
-                                </Link>
                             </td>
                         </tr>
                     );

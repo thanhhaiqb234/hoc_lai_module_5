@@ -1,11 +1,11 @@
 {
-  "blog" : [
+  "blogs" : [
     {
       "id" :1,
       "title" : "5 Best Crypto Performers During The 2022 Market Flop",
       "slug": "5 Best Crypto Performers During The 2022 Market Flop",
       "category" : "Crypto News",
-      "updatedAt" : "21 hours ago"
+      "updated" : "21 hours ago"
     },
     {
       "id" : 2,

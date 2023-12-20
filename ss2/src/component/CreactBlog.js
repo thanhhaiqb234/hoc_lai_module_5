@@ -6,13 +6,12 @@ import {toast, ToastContainer} from "react-toastify";
 import React from "react";
 import {useNavigate} from "react-router-dom"
 export function CreactBlog(){
-
     const navigate = useNavigate();
     const initValue = {
         title: "",
         slug: "",
         category: "",
-        updatad: ""
+        updated: ""
     };
     const validateObiect ={
     }
@@ -22,7 +21,7 @@ export function CreactBlog(){
             toast("oki")
             navigate("/");
         }
-    }
+    };
 
 return(
     <>
@@ -31,6 +30,12 @@ return(
             <div className="row text-lg-center">
                 <div>
                     <Formik initialValues={initValue}
+                            validationSchema={yup.object().shape({
+                                title: yup.string().required("Không được để trống"),
+                                slug: yup.string().required("Không được để trống"),
+                                category: yup.string().required("Không được để trống"),
+                                updated: yup.string().required("Không được để trống"),
+                            })}
                             onSubmit={(value) => {
                                 handleSubmit(value)
                             }}
@@ -43,34 +48,34 @@ return(
                                 <br/>
                                 <Field id="title" name="title">
                                 </Field>
-                                <ErrorMessage name="title" component="div" className={"text-danger"}></ErrorMessage>
+                                <ErrorMessage id="title" name="title" component="div" className={"text-danger"}></ErrorMessage>
                             </div>
                             <div>
                                 <label htmlFor={"slug"}>
-                                    Title Blog
+                                    Slug Blog
                                 </label>
                                 <br/>
                                 <Field id="slug" name="slug">
                                 </Field>
-                                <ErrorMessage name="slug" component="div" className={"text-danger"}></ErrorMessage>
+                                <ErrorMessage id="slug" name="slug" component="div" className={"text-danger"}></ErrorMessage>
                             </div>
                             <div>
                                 <label htmlFor={"category"}>
-                                    Title Blog
+                                    Category Blog
                                 </label>
                                 <br/>
                                 <Field id="category" name="category">
                                 </Field>
-                                <ErrorMessage name="category" component="div" className={"text-danger"}></ErrorMessage>
+                                <ErrorMessage id="category" name="category" component="div" className={"text-danger"}></ErrorMessage>
                             </div>
                             <div>
-                                <label htmlFor={"updatad"}>
-                                    Title Blog
+                                <label htmlFor={"updated"}>
+                                    Updated Blog
                                 </label>
                                 <br/>
-                                <Field id="updatad" name="updatad">
+                                <Field id="updated" name="updated">
                                 </Field>
-                                <ErrorMessage name="updatad" component="div" className={"text-danger"}></ErrorMessage>
+                                <ErrorMessage id="updated" name="updated" component="div" className={"text-danger"}></ErrorMessage>
                             </div>
                             <br/>
                             <div> <button type="submit">Save</button></div>
