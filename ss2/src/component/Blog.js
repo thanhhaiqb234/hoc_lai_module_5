@@ -6,14 +6,22 @@ import axios from "axios";
 export default function Blog() {
     const [blogs, setBlogs] = useState([]);
     const getAllBlog = async () => {
-        const data = await getAll();
-        setBlogs(data);
-        console.log(data);
+       try {
+           const data = await getAll();
+           setBlogs(data);
+           console.log(data);
+       }catch (e){
+           console.log(e);
+       }
     }
     const deleteBlog = async (id) => {
-        const message = await deleteBlogById(id);
-        getAllBlog();
-        console.log(message)
+        try {
+            const message = await deleteBlogById(id);
+            getAllBlog();
+            console.log(message)
+        }catch (e){
+            console.log(e);
+        }
     }
 
     useEffect(() => {
