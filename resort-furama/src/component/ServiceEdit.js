@@ -1,66 +1,79 @@
 import React from "react";
-import { findTypeServiceById, getTypeService } from "../service/typeService";
-import { useState } from "react";
-import { useEffect } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import {findTypeServiceById, getTypeService} from "../service/typeService";
+import {useState} from "react";
+import {useEffect} from "react";
+import {Formik, Form, Field, ErrorMessage} from "formik";
 import * as yup from "yup";
-import { findTypeRentalById, getTypeRental } from "../service/typeRental";
-import {
-    createService,
-    editService,
-    findServiceById,
-} from "../service/service";
-import { useNavigate } from "react-router";
+import {findTypeRentalById, getTypeRental} from "../service/typeRental";
+import {editService, findServiceById} from "../service/service";
+import {useNavigate, useParams} from "react-router";
 import Swal from "sweetalert2";
-import {NavLink} from "react-router-dom";
-export default function ServiceCreate() {
+import {logDOM} from "@testing-library/react";
+import { NavLink } from "react-router-dom";
+
+export default function ServiceEdit() {
+    const params = useParams();
     const navigate = useNavigate();
     const [typeSer, setTypeService] = useState([]);
     const [typeRental, setTypeRental] = useState([]);
+    const [service, setService] = useState([]);
     const getListTypeService = async () => {
         const data = await getTypeService();
         setTypeService(data);
     };
+
     const getListTypeRental = async () => {
         const data = await getTypeRental();
         setTypeRental(data);
     };
+
+
+    // get Service
+    const getServiceById = async () => {
+        const data = await findServiceById(params.id);
+        setService(data);
+    };
+
     useEffect(() => {
+        window.scrollTo(0, 0);
         getListTypeService();
         getListTypeRental();
-        window.scrollTo(0,0)
     }, []);
 
+    useEffect(() => {
+        getServiceById();
+    }, [params.id]);
+    if (!service) {
+        return null;
+    }
 
     //  submit
     const handleSubmit = async (values) => {
-        console.log(values.typeService);
         const type_service = await findTypeServiceById(values.typeService);
-        console.log(type_service);
         const type_rental = await findTypeRentalById(values.rental_type);
         const object = {
             ...values,
             typeService: type_service,
             type_rental: type_rental,
         };
-        await createService(object)
+        await editService(params.id,object)
             .then(() => {
                 navigate("/");
                 Swal.fire({
                     title: "Success",
-                    text: "New service has been created",
-                    icon: "success",
-                    timer: 2000,
-                });
+                    text: 'The service has been edited successfully',
+                    icon: 'success',
+                    timer: 2000
+                })
             })
             .catch(() => {
-                navigate("/service/create");
+                navigate(`/service/edit/${params.id}`);
             });
     };
 
     return (
         <div className="container" id="service-creation">
-            <h1>Creation Service</h1>
+            <h1>Edition Service</h1>
             <div className="row gutters">
                 <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                     <div className="card h-100">
@@ -68,7 +81,7 @@ export default function ServiceCreate() {
                             <div className="account-settings">
                                 <div className="user-profile">
                                     <div className="user-avatar">
-                                        <img src="/img/logo@2x.png" alt="Maxwell Admin" />
+                                        <img src="/img/logo@2x.png" alt="Maxwell Admin"/>
                                     </div>
                                     <h5 className="user-name">Furama Resort</h5>
                                     <h6 className="user-area">furama@luxury.com</h6>
@@ -84,21 +97,22 @@ export default function ServiceCreate() {
                         </div>
                     </div>
                 </div>
+                {service.id &&
                 <Formik
                     initialValues={{
-                        typeService: 0,
-                        service: "",
-                        usable_area: 0,
-                        costs: 0,
-                        max_people: 0,
-                        rental_type: 0,
-                        standard: "",
-                        description: "",
-                        floor: 0,
-                        pool: 0,
-                        free: "",
-                        image: "",
-                        unit_price: 0,
+                        typeService: service.typeService.id,
+                        service: service.service,
+                        usable_area: service.usable_area,
+                        costs: service.costs,
+                        max_people: service.max_people,
+                        rental_type: service.rental_type.id,
+                        standard: service.standard,
+                        description: service.description,
+                        floor: service.floor,
+                        pool: service.pool,
+                        free: service.free,
+                        image: service.image,
+                        unit_price: service.unit_price,
                     }}
                     validationSchema={yup.object().shape({
                         typeService: yup
@@ -128,17 +142,12 @@ export default function ServiceCreate() {
                             .required(
                                 "required-if-typeFacility-is-3",
                                 "The floor number has not been entered"
-                            ),
-                        pool: yup
-                            .number()
-                            .required(
-                                "required-if-typeFacility-is-1",
-                                "Pool area must be greater than 0"
-                            ),
+                            )
                     })}
-                    onSubmit={(values) => {
-                        handleSubmit(values);
-                    }}
+                    onSubmit={(values)=>{
+                    handleSubmit(values)}
+                    }
+
                 >
                     <Form className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                         <div className="card h-100">
@@ -339,20 +348,20 @@ export default function ServiceCreate() {
                                             />
                                         </div>
                                         <div className="form-group" hidden>
-                                            <label htmlFor="image">Image</label>
-                                            <Field
-                                                type="number"
-                                                className="form-control"
-                                                id="image"
-                                                name="image"
-
-                                            />
-                                            <ErrorMessage
-                                                component="div"
-                                                className="text-error"
-                                                name="floor"
-                                            />
-                                        </div>
+                      <label htmlFor="image">Image</label>
+                      <Field
+                        type="number"
+                        className="form-control"
+                        id="image"
+                        name="image"
+                        
+                      />
+                      <ErrorMessage
+                        component="div"
+                        className="text-error"
+                        name="floor"
+                      />
+                    </div>
                                     </div>
                                 </div>
                                 <div className="row gutters">
@@ -399,15 +408,15 @@ export default function ServiceCreate() {
                                 <div className="row gutters">
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div className="text-right">
-                                            <NavLink to="/">
-                                                <button
-                                                    type="button"
-                                                    id="submit"
-                                                    name="submit"
-                                                    className="btn btn-secondary"
-                                                >
-                                                    Cancel
-                                                </button>
+                                            <NavLink to={"/"}>
+                                            <button
+                                                type="button"
+                                                id="submit"
+                                                name="submit"
+                                                className="btn btn-secondary"
+                                            >
+                                                Cancel
+                                            </button>
                                             </NavLink>
                                             <button
                                                 type="submit"
@@ -415,7 +424,7 @@ export default function ServiceCreate() {
                                                 name="submit"
                                                 className="btn btn-primary"
                                             >
-                                                Create
+                                                Save
                                             </button>
                                         </div>
                                     </div>
@@ -424,6 +433,7 @@ export default function ServiceCreate() {
                         </div>
                     </Form>
                 </Formik>
+                }
             </div>
         </div>
     );
