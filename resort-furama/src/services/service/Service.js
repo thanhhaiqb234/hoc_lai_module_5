@@ -29,6 +29,7 @@ export async function createService(service) {
 export async function deleteServiceById(id) {
     try {
         await axios.delete(`http://localhost:8080/services/${id}`);
+        return true;
     } catch (e) {
         console.log(e);
     }
